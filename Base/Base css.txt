@@ -1,0 +1,442 @@
+/* --- Global & Typography --- */
+body {
+    font-family: 'Montserrat', sans-serif; /* Police moderne et lisible */
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Fond sombre carbone */
+    color: #e0e0e0; /* Texte clair */
+    line-height: 1.6;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Chakra Petch', sans-serif; /* Police technique et dynamique */
+    color: #ff4500; /* Orange vif pour les titres */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a {
+    color: #00bfff; /* Bleu électrique pour les liens */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ff4500; /* Orange vif au survol */
+}
+
+.slogan {
+    font-weight: 400;
+    font-size: 0.8em;
+    color: #cccccc;
+    display: block;
+    margin-top: 5px;
+}
+
+/* --- Header & Navigation (Pit Lane) --- */
+.pit-lane-header {
+    background-color: #0d0d0d; /* Noir très foncé */
+    color: white;
+    padding: 1.5em 2em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.race-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.driver-name {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    position: relative;
+    color: #e0e0e0;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: attr(data-text); /* Utilise l'attribut data-text pour l'effet */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    overflow: hidden;
+    color: #ff4500;
+    transition: width 0.3s ease-out;
+    white-space: nowrap;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- Hero Section (Track Section) --- */
+.track-section {
+    background: url('https://source.unsplash.com/1600x900/?motorsport,circuit') no-repeat center center/cover; /* Image de circuit aléatoire */
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 150px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.track-section::before { /* Calque semi-transparent pour le texte */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #ffffff; /* Titre blanc sur le fond sombre */
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+.race-start-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff4500, #ff8c00); /* Dégradé orange/rouge */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+}
+
+.race-start-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.6);
+}
+
+/* --- General Info Sections --- */
+.info-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #2c2c2c; /* Gris foncé pour les sections */
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-left: 5px solid #ff4500; /* Bande latérale accentuée */
+}
+
+.info-section:nth-child(even) {
+    background-color: #3a3a3a; /* Alterner les fonds */
+}
+
+.info-section h3 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.info-section h3::after { /* Soulignement animé */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #00bfff;
+    border-radius: 2px;
+}
+
+/* --- Profil Section (Grid Layout) --- */
+#profil.grid-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    text-align: left;
+    align-items: center;
+}
+
+#profil .profile-card {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border-top: 3px solid #ff4500;
+}
+
+#profil .image-placeholder {
+    background-color: #444;
+    height: 250px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #bbb;
+    font-size: 0.9em;
+    border: 2px dashed #666;
+}
+
+.download-link {
+    display: inline-block;
+    background-color: #00bfff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-top: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+.download-link:hover {
+    background-color: #008cc0;
+    transform: translateY(-2px);
+}
+
+/* --- Compétences (Dashboard Grid) --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.skill-meter {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    border-bottom: 3px solid #00bfff; /* Bordure inférieure bleue */
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-meter:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+}
+
+.skill-meter h4 {
+    color: #ff8c00; /* Orange plus doux pour les sous-titres */
+    margin-top: 0;
+    font-size: 1.4em;
+    border-bottom: 1px dashed #444;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.skill-meter ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-meter li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+    color: #cccccc;
+}
+
+.skill-meter li::before {
+    content: '⚙️'; /* Symbole d'engrenage */
+    position: absolute;
+    left: 0;
+    color: #00bfff;
+    font-size: 1.1em;
+}
+
+/* --- Projets (Projects Grid) --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    border-left: 3px solid #ff4500;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+.project-card h4 {
+    color: #ff8c00;
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.tech-tags {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.tech-tags span {
+    display: inline-block;
+    background-color: #444;
+    color: #00bfff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #00bfff;
+}
+
+.view-project-link {
+    display: inline-block;
+    background-color: #ff4500;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.9em;
+    margin-top: 15px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.view-project-link:hover {
+    background-color: #cc3700;
+}
+
+/* --- Contact Section (Pit Stop) --- */
+.pit-stop-contact {
+    text-align: center;
+    border-top: 5px dashed #ff4500;
+    padding-top: 60px;
+    margin-top: 60px;
+}
+
+.pit-stop-contact p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* --- Footer (Race Footer) --- */
+.race-footer {
+    background-color: #0d0d0d;
+    color: #888;
+    text-align: center;
+    padding: 2em 0;
+    font-size: 0.9em;
+    border-top: 3px solid #ff4500;
+}
+
+/* --- Responsive (Mobile View - Paddock) --- */
+.menu-button {
+    display: none; /* Masqué par défaut sur desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.menu-button span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 900px) {
+    .race-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        display: none; /* Masqué sur mobile par défaut */
+        flex-direction: column;
+        width: 100%;
+        background-color: #0d0d0d;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1em 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .nav-links a {
+        padding: 10px 0;
+        display: block;
+    }
+
+    .menu-button {
+        display: block; /* Affiché sur mobile */
+        position: absolute;
+        right: 20px;
+        top: 25px;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    #profil.grid-layout {
+        grid-template-columns: 1fr;
+    }
+    #profil .image-placeholder {
+        order: -1; /* Mettre l'image avant le texte sur mobile */
+    }
+
+    .dashboard-grid, .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
