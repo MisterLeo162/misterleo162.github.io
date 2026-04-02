@@ -1,0 +1,39 @@
+// Gérer l'ouverture/fermeture du menu sur mobile (Bouton Pit Stop)
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    menuToggle.classList.toggle('active'); // Pour une animation future du bouton hamburger
+});
+
+// Fermer le menu après avoir cliqué sur un lien (sur mobile)
+document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) { // Adapter à la media query du CSS
+            navMenu.classList.remove('open');
+            menuToggle.classList.remove('active');
+        }
+    });
+});
+
+/*
+    *** Idées JS pour un portfolio SISR Thème Sport Auto : ***
+
+    1.  Effets de défilement (Scroll Reveal) :
+        Utilisez une librairie comme AOS (Animate On Scroll) pour faire apparaître les sections
+        avec des animations de type "slide-in" ou "fade-up", comme des éléments d'interface qui s'activent.
+
+    2.  Compteur de Statistiques (Simulé) :
+        Dans la section compétences, vous pourriez avoir des "compteurs" animés
+        qui montent pour chaque compétence, comme un compte-tours qui monte en régime.
+        (Ex: 95% Maîtrise Windows Server)
+
+    3.  Galerie de Projets / Carrousel :
+        Si vous avez des captures d'écran de vos projets, un petit carrousel
+        pour les présenter comme un "diaporama de performances".
+
+    4.  Thème sombre/clair (switch mode "Jour/Nuit de course") :
+        Un bouton pour basculer entre un thème sombre (par défaut) et un thème plus clair
+        pour rappeler les courses de jour et de nuit.
+*/
