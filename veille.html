@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique - Green IT & Réseaux</title>
+    <link rel="stylesheet" href="style-docs.css">
+    <style>
+        /* Ajustements spécifiques pour la mise en page */
+        .article-content {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+        }
+        .article-content h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .article-content h3 {
+            color: var(--secondary-color);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .article-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+            line-height: 1.7;
+        }
+        
+        /* Style pour la frise d'évolution */
+        .evolution-list {
+            list-style: none;
+            margin-left: 0;
+            border-left: 3px solid var(--primary-color);
+            padding-left: 20px;
+            margin-top: 25px;
+        }
+        .evolution-list li {
+            margin-bottom: 30px;
+            position: relative;
+            background-color: var(--bg-color);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .evolution-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-color: var(--secondary-color);
+        }
+        .evolution-list li::before {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background-color: var(--card-bg);
+            border: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            left: -31px;
+            top: 20px;
+        }
+        .date-badge {
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Nouveaux boutons intégrés à la frise */
+        .source-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .btn-timeline {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 15px;
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn-timeline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Veille Technologique</a>
+        <div class="nav-controls">
+            <a href="index.html" class="btn-back">← Accueil</a>
+            <button id="theme-toggle">🌙 Sombre</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="fade-in">
+            <h1 style="margin-bottom: 5px;">Green IT & Infrastructures Réseaux</h1>
+            <p class="subtitle">Analyse de l'évolution de l'empreinte environnementale des réseaux (2024-2026)</p>
+        </div>
+
+        <section class="fade-in">
+            <div class="article-content">
+                <h2>Contexte & Chiffres Clés</h2>
+                <p>Historiquement évaluée à 2,5%, l'empreinte carbone du numérique en France a été réévaluée à <strong>4,4% par l'ADEME et l'ARCEP</strong> lors de leurs enquêtes récentes. Cette hausse s'explique par l'explosion des usages de l'IA (qui nécessite des transferts massifs de données) mais aussi par la prise en compte plus stricte du <strong>Scope 3</strong> (émissions liées à la fabrication du matériel).</p>
+                
+                <p>En tant que futur technicien réseau, ma veille se concentre sur les solutions techniques déployées ces deux dernières années pour optimiser le bilan énergétique de la couche réseau (routage, commutation, Wi-Fi, datacenters), de la fabrication jusqu'à l'utilisation quotidienne.</p>
+                
+                <h3>📈 Chronologie et Sources (2024 - 2026)</h3>
+                <ul class="evolution-list">
+                    <li>
+                        <span class="date-badge">Fin 2024 - L'économie circulaire intègre le cœur de réseau</span>
+                        <p>L'achat de matériel reconditionné (switches, routeurs, pare-feux) devient une norme dans les politiques RSE des entreprises. Le but : repousser l'obsolescence et réduire le Scope 3, la fabrication comptant pour près de 75% du bilan carbone d'un équipement réseau.</p>
+                        <div class="source-links">
+                            <a href="https://institutnr.org/" target="_blank" class="btn-timeline">📄 Article : Réseau & Économie Circulaire ↗</a>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="date-badge">Début 2025 - Extinction de la 2G/3G et optimisation 5G</span>
+                        <p>La transition s'accélère avec la coupure programmée des anciens réseaux 2G/3G par les opérateurs. Bien que les antennes 5G soient complexes à fabriquer, elles intègrent la technologie <em>Massive MIMO</em> et des fonctions de "mise en sommeil" (Sleep Mode). Résultat : une efficacité énergétique au mégaoctet transféré jusqu'à 10 fois supérieure.</p>
+                        <div class="source-links">
+                            <a href="https://www.arcep.fr/nos-sujets/numerique-et-environnement.html" target="_blank" class="btn-timeline">📊 Rapport ARCEP : Impact Environnemental ↗</a>
+                            <a href="https://communication-responsable.ademe.fr/numerique-responsable/impact-numerique" target="_blank" class="btn-timeline">📊 Chiffres ADEME : Numérique Responsable ↗</a>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="date-badge">Septembre 2025 - Déploiement massif du Wi-Fi 7 (802.11be)</span>
+                        <p>L'adoption en entreprise du Wi-Fi 7 apporte des innovations majeures pour le Green IT. La technologie <strong>Restricted Target Wake Time (rTWT)</strong> permet de coordonner avec une précision redoutable les moments de veille des cartes réseaux des postes clients et des points d'accès. L'énergie consommée par le réseau sans-fil chute considérablement.</p>
+                        <div class="source-links">
+                            <a href="https://www.wi-fi.org/discover-wi-fi/wi-fi-certified-7" target="_blank" class="btn-timeline">📄 Spécifications techniques (Wi-Fi Alliance) ↗</a>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <span class="date-badge">Début 2026 - Directive EED & IA de routage (SDN)</span>
+                        <p>Entrée en vigueur de la directive européenne (EED) imposant aux Datacenters la récupération de chaleur. En parallèle, les contrôleurs <strong>SDN (Software-Defined Networking)</strong> intègrent nativement l'IA pour calculer les tables de routage en privilégiant les "chemins verts" et en désactivant dynamiquement les ports Ethernet inutilisés (<em>Energy Efficient Ethernet - 802.3az</em>).</p>
+                        <div class="source-links">
+                            <a href="https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive_en" target="_blank" class="btn-timeline">🏛️ Directive Européenne EED (Europa.eu) ↗</a>
+                            <a href="https://www.greenit.fr/" target="_blank" class="btn-timeline">📄 Article : SDN, IA et écologie (GreenIT) ↗</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!--<section class="project-section fade-in" style="text-align: center; margin-top: 20px;">
+            <h2 style="border: none; margin-bottom: 10px;">Livrable d'examen</h2>
+            <p style="color: var(--secondary-color); margin-bottom: 25px;">Retrouvez mon tableau de suivi complet et la synthèse détaillée de cette veille au format PDF.</p>
+            <a href="fichiers/synthese_veille.pdf" target="_blank" class="btn-view" style="display: inline-block; width: auto; padding: 15px 30px; font-size: 1.1rem;">
+                📥 Télécharger la synthèse complète (PDF)
+            </a>
+        </section>-->
+
+    </main>
+
+    <footer>
+        <p>© 2024-2026 - Veille Technologique BTS SIO - Sujet : Green IT & Réseaux</p>
+    </footer>
+
+    <script src="script-docs.js"></script>
+</body>
+</html>
